@@ -1,0 +1,31 @@
+{
+  "name": "adm5-pro-webui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.23.0",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,magenta \"node --watch server/index.ts\" \"vite\"",
+    "build": "vite build",
+    "start": "node server/index.ts",
+    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.server.json"
+  },
+  "dependencies": {
+    "@ghosttypes/ff-api": "^2.1.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@tsconfig/svelte": "^5.0.8",
+    "@types/node": "^26.6.5",
+    "concurrently": "^10.0.6",
+    "svelte": "^5.57.2",
+    "svelte-check": "^4.7.7",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.4"
+  }
+}
