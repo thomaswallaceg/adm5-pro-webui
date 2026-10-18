@@ -4,7 +4,7 @@
   import { displayFileName, formatDuration, formatEta, STATE_LABELS } from '../lib/format.ts';
   import { command } from '../lib/printer.svelte.ts';
   import FilePicker from './FilePicker.svelte';
-  import Panel from './Panel.svelte';
+  import Section from './Section.svelte';
 
   let { snapshot, connected }: { snapshot: PrinterSnapshot | null; connected: boolean } = $props();
 
@@ -28,7 +28,7 @@
   }
 </script>
 
-<Panel title="Print job">
+<Section title="Print job">
   {#if job}
     <div class="flex gap-4">
       <img
@@ -81,6 +81,6 @@
       </button>
     </div>
   {/if}
-</Panel>
+</Section>
 
 <FilePicker bind:open={pickerOpen} />
